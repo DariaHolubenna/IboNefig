@@ -1,0 +1,122 @@
+.container {
+	width: 100%;
+	background-image: url(http://www.topoboi.com/pic/201308/1366x768/topoboi.com-9323.jpg);
+	height: auto;
+	background-size: 100%;
+	min-width: 360px;
+    color: whitesmoke;
+    
+	.border {
+		margin: 0 auto;
+		min-width: 319px;
+        max-width: 1024px;
+        
+		.grid {
+			display: grid;
+			// grid-template-columns: 1fr 1fr 1fr 1fr;
+			grid-auto-rows: 100px minmax(200px, 1fr) minmax(200px, 1fr) auto auto;
+			grid-template-areas: 'head head head' 'img img img' 'aside aside aside' 'cont cont cont' 'footer footer footer';
+            grid-gap: 20px;
+        
+            @media (max-width: 500px) {
+				grid-gap: 5px;
+			}
+			.h {
+				display: flex;
+				justify-content: space-around;
+				align-items: center;
+				grid-area: head;
+				color: lightyellow;
+				font-size: 23px;
+				font-family: monospace;
+				padding: 30px;
+				border-radius: 50px;
+				text-align: center;
+				background-color: rgba($color: #000000, $alpha: 0.5);
+				list-style-type: none;
+				@media (max-width: 700px){
+                	flex-wrap: wrap;
+				}
+                
+				li a {
+					text-decoration: none;
+					color: red;
+                }
+                
+				input[type="submit"] {
+					border: 1px solid red;
+				}
+            }
+            
+			.img {
+                grid-area: img;
+                
+				.blin {
+					font-size: 16px;
+					border-radius: 5px;
+					width: 250px;
+					height: 25px;
+					padding: 10px;
+					border: 1px solid red;
+					// margin-left: 20px;
+                }
+                
+				img {
+					height: 150px;
+					width: 90%;
+					margin-left: 5%;
+					// filter: blur(0.8px);
+					border-top-left-radius: 80px;
+					border-bottom-right-radius: 80px;
+					// border-radius: 80px;
+					margin-top: 25px;
+					border: 1px solid whitesmoke;
+				}
+			}
+		}
+		.aside {
+			grid-area: aside;
+			background-color: rgba($color: #000000, $alpha: 0.5);
+			// grid-row-gap: 50px;
+			// margin-top: 50px;
+			padding: 10px;
+			text-align: center;
+			color: wheat;
+			font-family: monospace;
+			font-size: 18px;
+			&::first-letter {
+				color: red;
+				font-size: 32px;
+			}
+		}
+		.content {
+			grid-area: cont;
+			background-color: rgba($color: #000000, $alpha: 0.5);
+			padding: 10px;
+			text-align: center;
+			color: wheat;
+			font-family: monospace;
+			font-size: 18px;
+			text-align: center;
+			&::first-letter {
+				color: red;
+				font-size: 32px;
+			}
+		}
+		.quote {
+			grid-area: footer;
+			background-color: rgba($color: #000000, $alpha: 0.5);
+			padding: 10px;
+			text-align: center;
+			color: wheat;
+			font-family: monospace;
+			font-size: 18px;
+			height: auto;
+			text-align: center;
+			&::first-letter {
+				color: red;
+				font-size: 32px;
+			}
+		}
+	}
+}
